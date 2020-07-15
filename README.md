@@ -20,12 +20,12 @@ streamlit run app.py
 ### Dataset Preparation and Preprocessing
 Dataset used in this project is from Painter by Numbers which available on Kaggle. The dataset is a huge collection of paintings labelled by the painters name, style (movement), genre, and many more. I sorted and categorized the paintings by the style and aggregated it into 5 major modern movements or styles:
 
-> class_1 = ['Cubism', 'Tubism', 'Cubo-Expressionism', 'Mechanistic Cubism', 'Analytical Cubism', 'Cubo-Futurism', 'Synthetic Cubism']
-> class_2 = ['Impressionism', 'Post-Impressionism', 'Synthetism', 'Divisionism', 'Cloisonnism']
-> class_3 = ['Expressionism', 'Neo-Expressionism', 'Figurative Expressionism', 'Fauvism']
-> class_4 = ['Realism', 'Hyper-Realism', 'Photorealism', 'Analytical Realism', 'Naturalism']
-> class_5 = ['Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism', 'Constructivism', 'Lettrism', 'Neo-Concretism', 'Suprematism',
-             'Spatialism', 'Conceptual Art', 'Tachisme', 'Post-Painterly Abstraction', 'Neoplasticism', 'Precisionism', 'Hard Edge Painting']
+Cubism        -> 'Cubism', 'Tubism', 'Cubo-Expressionism', 'Mechanistic Cubism', 'Analytical Cubism', 'Cubo-Futurism', 'Synthetic Cubism'
+Impressionism -> 'Impressionism', 'Post-Impressionism', 'Synthetism', 'Divisionism', 'Cloisonnism'
+Expressionism -> 'Expressionism', 'Neo-Expressionism', 'Figurative Expressionism', 'Fauvism'
+Realism       -> 'Realism', 'Hyper-Realism', 'Photorealism', 'Analytical Realism', 'Naturalism'
+Abstract      -> 'Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism', 'Constructivism', 'Lettrism', 'Neo-Concretism', 'Suprematism',
+                 'Spatialism', 'Conceptual Art', 'Tachisme', 'Post-Painterly Abstraction', 'Neoplasticism', 'Precisionism', 'Hard Edge Painting'
            
 * Please note that I've no formal education in art history and curation, the aggregation of the style is purely based on my common art knowledge. Thus, if you spot something odd/wrong and have suggestions/critics regarding the dataset, please do tell me :) 
 
