@@ -17,23 +17,26 @@ Download or clone this repo and execute the following command in your command pr
 streamlit run app.py
 ```
 
-### Dataset Preparation and Preprocessing
-Dataset used in this project is from Painter by Numbers which available on Kaggle. The dataset is a huge collection of paintings labelled by the painters name, style (movement), genre, and many more. I sorted and categorized the paintings by the style and aggregated it into 5 major modern movements or styles:
+### Dataset Preparation, Preprocessing, and Augmentation
+**Dataset Preparation**
+Dataset used in this project is from Painter by Numbers which available on Kaggle. The dataset is a huge collection of paintings (about 23k unique paintings) labelled by the painters name, style (movement), genre, and many more. I sorted and categorized the paintings by the style and aggregated it into 5 major modern movements or styles:
 ```
-Cubism        -> 'Cubism', 'Tubism', 'Cubo-Expressionism', 'Mechanistic Cubism', 'Analytical Cubism', 'Cubo-Futurism', 'Synthetic Cubism'
-Impressionism -> 'Impressionism', 'Post-Impressionism', 'Synthetism', 'Divisionism', 'Cloisonnism'
-Expressionism -> 'Expressionism', 'Neo-Expressionism', 'Figurative Expressionism', 'Fauvism'
-Realism       -> 'Realism', 'Hyper-Realism', 'Photorealism', 'Analytical Realism', 'Naturalism'
-Abstract      -> 'Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism', 'Constructivism', 'Lettrism', 'Neo-Concretism', 'Suprematism',
-                 'Spatialism', 'Conceptual Art', 'Tachisme', 'Post-Painterly Abstraction', 'Neoplasticism', 'Precisionism', 'Hard Edge Painting'
-```     
-* Please note that I've no formal education in art history and curation, the aggregation of the style is purely based on my common art knowledge. Thus, if you spot something odd/wrong and have suggestions/critics regarding the dataset, please do tell me :) 
+# Painting Style Classes Aggregation
+Cubism        -> ['Cubism', 'Tubism', 'Cubo-Expressionism', 'Mechanistic Cubism', 'Analytical Cubism', 'Cubo-Futurism', 'Synthetic Cubism']
+Impressionism -> ['Impressionism', 'Post-Impressionism', 'Synthetism', 'Divisionism', 'Cloisonnism']
+Expressionism -> ['Expressionism', 'Neo-Expressionism', 'Figurative Expressionism', 'Fauvism']
+Realism       -> ['Realism', 'Hyper-Realism', 'Photorealism', 'Analytical Realism', 'Naturalism']
+Abstract      -> ['Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism', 'Constructivism', 'Lettrism', 'Neo-Concretism', 'Suprematism',
+                 'Spatialism', 'Conceptual Art', 'Tachisme', 'Post-Painterly Abstraction', 'Neoplasticism', 'Precisionism', 'Hard Edge Painting']
+```   
 
-After we have the selected paintings for the final dataset. We need to make the network learn two major things 
+*Please note that I've no formal education in art history and curation, the aggregation of the style is purely based on my common art knowledge.*
+*Thus, if you spot something odd/wrong and have suggestions/critics regarding the dataset, please do tell me :)*
 
-The whole selected paintings is then normalized to [0,1] and transformed into square image by padding (we don't 
+**Dataset Preprocessing and Augmentation**
+After we have the selected paintings for the final dataset. We need to make the network learn two things from the dataset, how the whole image information represents certain style and how texture details such as brush stroke and color tone represents certain style. 
 
-### Dataset Augmentation
+To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[256x256x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This process will augment the dataset by 5 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
 
 ### Network Architecture
 DenseNet-121 is used as a backbone of the network followed by a classifier layers consisted of:
@@ -52,8 +55,11 @@ When training, we freeze all the layers in the DenseNet-121 except some of the l
 The network is trained with cross entropy loss function (in keras/tensorflow: ```categorical_crossentropy```), Adam optimizer, and batch size of 32. The learning rate starting value is 0.0001 and decaying half after 2 epochs.
 
 ### Accuracy of the trained model
-The trained model uploaded in this repo has a categorical accuracy around 66%, but one might argue
+The trained model uploaded in this repo has a categorical accuracy around 66% after 15 epochs of training.
+| Training Acc.  | Validation Acc. | Test Acc. |
+| -------------- | --------------- | --------- |
+| 65.54          | 66.16           | 66.10     |
 
-
-
-
+### Additional Information
+- Preprocessing process was done in my local machine
+- Training process was done in Google Colab with GPU (I intend to share the training code soon!)
