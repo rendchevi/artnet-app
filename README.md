@@ -58,7 +58,7 @@ The network is trained with cross entropy loss function (in keras/tensorflow: ``
 The trained model uploaded in this repo has a categorical accuracy around 66% after 15 epochs of training.
 | Training Acc.  | Validation Acc. | Test Acc. |
 | -------------- | --------------- | --------- |
-| 65.54          | 66.16           | 66.10     |
+| 65.54          | 66.16           | 66.75     |
 
 ### Additional Information
 - Preprocessing process was done in my local machine
