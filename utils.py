@@ -1,7 +1,7 @@
 # ======================================================================
 # Utilities Function for ArtNet - Art Style Classification and Visualization
 # Author: Rendi Chevi
-#         rendi.chevi@gmail.com
+#         https://github.com/rendchevi
 # ======================================================================
 
 import streamlit as st
