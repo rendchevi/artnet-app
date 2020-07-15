@@ -78,7 +78,7 @@ def load_model(do_gradcam = False):
     # -------------------------------------
 
     # Build the ArtNet model
-    artnet = tf.keras.models.load_model('model/artnet_5_66', compile = False)
+    artnet = tf.keras.models.load_model('model/artnet', compile = False)
     # Option to extract intermediate layers for GradCAM
     if do_gradcam == True:
         target_layer = ['conv2_block2_2_conv' , 'conv2_block6_2_conv'  , 'conv3_block8_2_conv',
