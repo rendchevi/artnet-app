@@ -1,7 +1,9 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
 ### Description
-ArtNet is a deep learning project that. 
+ArtNet is a deep learning 
+
+I intend to share the training and preprocessing codes soon.
 
 ### How to install 
 This project is written fully in Python. Thus, you need a Python environment in your computer and the following dependencies to install:
@@ -63,3 +65,8 @@ The trained model uploaded in this repo has a categorical accuracy around 66% af
 ### Additional Information
 - Preprocessing process was done in my local machine
 - Training process was done in Google Colab with GPU (I intend to share the training code soon!)
+
+### Future Improvements
+- [ ] Host the app on the web
+- [ ] Re-train on a bigger dataset to achieve higher accuracy
+- [ ] Further research on multilabel classification for classifying art style/movement
