@@ -1,1 +1,3 @@
-# artnet-app
+# Painting Style Classification and Feature Visualization
+
+
