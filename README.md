@@ -1,4 +1,4 @@
-# Painting Style Classification and Feature Visualization
+# ArtNet - Painting Style Classification and Feature Visualization
 
 ### Description
 ArtNet is a deep learning project that. 
