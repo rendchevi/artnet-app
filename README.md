@@ -1,14 +1,16 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
 ### Description
-ArtNet is a deep learning 
+ArtNet is a deep learning project with the goals to classify or identify modern paintings style and visualize what the network "sees" when making that decision. The network learns 5 major art movement (at least for now): Cubism, Impressionism, Expressionism, Realism, and Abstract. I choose those movements because their disctinction mainly presents in the visual information such as the brush stroke techniques, which are something. Thus, I avoid the movements that semantically different such as Surrealism, which could be use similar and makes the network harder to learn (I've tried it and the results not really good, maybe on another project). 
 
-I intend to share the training and preprocessing codes soon.
+I also thought it would be interesting to visualize what the network learns from paintings dataset, although it hasn't been optimized yet, I added option in the app to visualize what the network sees at some layers of the network. GradCAM is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to give it some improvements for better visualization output, I haven't pay much attention to it.
+
+This repository is containing the app to run the model on your own and the pre-trained model only, I plan to upload the training and data preprocessing codes soon in different repository.
 
 ### How to install 
 This project is written fully in Python. Thus, you need a Python environment in your computer and the following dependencies to install:
 ```
-tensorflow==2.2.0 
+tensorflow==2.2.0 (or tensorflow-cpu is fine)
 streamlit==0.63.0
 numpy==1.18.1
 Pillow==7.2.0
@@ -42,14 +44,13 @@ To achieve the first one, we simply pad (we should maintain image's aspect ratio
 
 ![Patch Image](https://github.com/rendchevi/artnet-app/blob/master/assets/patch_sample.jpg)
 
-### Network Architecture
+### Network Architecture and Training
 DenseNet-121 is used as a backbone of the network followed by a classifier layers consisted of:
 ```
 Global Average Pooling -> Dropout -> Batch Normalization -> Dense Layer
 ```
 Dropout rate is set to 0.5 and softmax function is used as the final layer's activation function.
 
-### Network Training
 The network (DenseNet-121 plus the classifier) is trained via transfer learning approach. I used DenseNet-121 pre-trained with ImageNet dataset (from Tensorflow's implementation) as the starting network's weights and the classifier weights are initialized randomly.
 
 When training, we freeze all the layers in the DenseNet-121 except some of the last convolutional layers to allow the network to learn some probable unique high-level features in paintings and the batch normalization layers.
