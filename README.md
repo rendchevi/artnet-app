@@ -4,7 +4,7 @@
 ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.
 
 
-The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones. Unlike movements such as Dada and Surrealism, which distinction lies in the uncommon object and narration presented in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
+The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones. Unlike movements such as Dada and Surrealism, which distinction presents in the uncommon object and narration in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
 
 I also thought it would be interesting to visualize what the network learned from classifying painting styles/movements, although it hasn't been optimized yet, I added option in the app to visualize what the network sees at some layers of the network. **GradCAM** is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
 
@@ -63,7 +63,7 @@ When training, we freeze all the layers in the DenseNet-121 except some of the l
 The network is trained with cross entropy loss function (in keras/tensorflow: ```categorical_crossentropy```), Adam optimizer, and batch size of 32. The learning rate starting value is 0.0001 and decaying half after 2 epochs.
 
 ### Accuracy of the trained model
-The trained model uploaded in this repo has a categorical accuracy around 66% after 15 epochs of training.
+The trained model uploaded in this repo has a categorical accuracy around 66% after 15 epochs of training.  
 | Training Acc.  | Validation Acc. | Test Acc. |
 | -------------- | --------------- | --------- |
 | 65.54          | 66.16           | 66.75     |
