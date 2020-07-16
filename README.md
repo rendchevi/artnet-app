@@ -76,7 +76,7 @@ The trained model uploaded in this repo has a categorical accuracy around 66% af
 ![Validation Plot](https://github.com/rendchevi/artnet-app/blob/master/assets/plot_acc.png)
 
 ### Additional Information
-- Preprocessing process was done in my local machine
+- Dataset preprocessing was done in my local machine
 - Training process was done in Google Colab with GPU (I intend to share the training code soon!)
 
 ### Future Improvements
