@@ -40,12 +40,16 @@ After we have the selected paintings for the final dataset. We need to make the 
 
 To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[256x256x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This process will augment the dataset by 5 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
 
+![Patch Image](https://github.com/rendchevi/artnet-app/blob/master/assets/patch_sample.jpg)
+
 ### Network Architecture
 DenseNet-121 is used as a backbone of the network followed by a classifier layers consisted of:
 ```
 Global Average Pooling -> Dropout -> Batch Normalization -> Dense Layer
 ```
 Dropout rate is set to 0.5 and softmax function is used as the final layer's activation function.
+
+
 
 ### Network Training
 The network (DenseNet-121 plus the classifier) is trained via transfer learning approach. I used DenseNet-121 pre-trained with ImageNet dataset (from Tensorflow's implementation) as the starting network's weights and the classifier weights are initialized randomly.
@@ -61,6 +65,8 @@ The trained model uploaded in this repo has a categorical accuracy around 66% af
 | Training Acc.  | Validation Acc. | Test Acc. |
 | -------------- | --------------- | --------- |
 | 65.54          | 66.16           | 66.75     |
+
+![Validation Plot](https://github.com/rendchevi/artnet-app/blob/master/assets/plot_acc.png)
 
 ### Additional Information
 - Preprocessing process was done in my local machine
