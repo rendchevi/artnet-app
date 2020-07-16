@@ -48,7 +48,7 @@ Abstract      -> ['Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism',
 **Dataset Preprocessing and Augmentation**  
 After we have the selected paintings for the final dataset. We need to make the network learn two things from the dataset, how the whole image information represents certain style and how texture details such as brush stroke and color tone represents certain style. 
 
-To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[256x256x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This process will augment the dataset by 5 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
+To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[224x224x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This process will augment the dataset by 5 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
 
 ![Patch Image](https://github.com/rendchevi/artnet-app/blob/master/assets/patch_sample.jpg)
 
