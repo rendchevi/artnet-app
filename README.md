@@ -1,11 +1,14 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
 ### Description
-ArtNet is a deep learning project with the goals to classify or identify modern paintings style and visualize what the network "sees" when making that decision. The network learns 5 major art movement (at least for now): Cubism, Impressionism, Expressionism, Realism, and Abstract. I choose those movements because their disctinction mainly presents in the visual information such as the brush stroke techniques, which are something. Thus, I avoid the movements that semantically different such as Surrealism, which could be use similar and makes the network harder to learn (I've tried it and the results not really good, maybe on another project). 
+ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.
 
-I also thought it would be interesting to visualize what the network learns from paintings dataset, although it hasn't been optimized yet, I added option in the app to visualize what the network sees at some layers of the network. GradCAM is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to give it some improvements for better visualization output, I haven't pay much attention to it.
 
-This repository is containing the app to run the model on your own and the pre-trained model only, I plan to upload the training and data preprocessing codes soon in different repository.
+The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones. Unlike movements such as Dada and Surrealism, which distinction lies in the uncommon object and narration presented in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
+
+I also thought it would be interesting to visualize what the network learned from classifying painting styles/movements, although it hasn't been optimized yet, I added option in the app to visualize what the network sees at some layers of the network. **GradCAM** is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
+
+This repository is only containing the app to run the model on your own and the pre-trained model, I plan to upload the training and data preprocessing codes soon in different repository.
 
 ### How to install 
 This project is written fully in Python. Thus, you need a Python environment in your computer and the following dependencies to install:
@@ -73,5 +76,6 @@ The trained model uploaded in this repo has a categorical accuracy around 66% af
 
 ### Future Improvements
 - [ ] Host the app on the web
+- [ ] Revamp the feature visualization options
 - [ ] Re-train on a bigger dataset to achieve higher accuracy
 - [ ] Further research on multilabel classification for classifying art style/movement
