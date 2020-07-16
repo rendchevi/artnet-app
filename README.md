@@ -3,12 +3,13 @@
 ## Project Description
 **🖼️ ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**
 
+![Preview](https://github.com/rendchevi/artnet-app/blob/master/assets/artnet-preview.gif)
 
 The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones.  
   
 Unlike movements such as Dada and Surrealism, which distinction presents in the uncommon object and narration in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
 
-I also thought it would be interesting to visualize what the network learned from classifying painting styles/movements, although it hasn't been optimized yet, I added option in the app to visualize what the network sees at some layers of the network. **GradCAM** is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
+I also thought it would be interesting to **visualize what the network learned from classifying painting styles/movements**, although it hasn't been optimized very well, I added option in the app to visualize what the network sees at some layers of the network. **GradCAM** is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
 
 This repository is only containing the app to run the model on your own and the pre-trained model, I plan to upload the training and data preprocessing codes soon in different repository.
 
