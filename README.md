@@ -5,7 +5,7 @@
 
 ![Preview](https://github.com/rendchevi/artnet-app/blob/master/assets/artnet-preview.gif)
 
-The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones.  
+The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because of their disctinction that mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones.  
   
 Unlike movements such as Dada and Surrealism, which distinction presents in the uncommon object and narration in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
 
