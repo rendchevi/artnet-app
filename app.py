@@ -29,7 +29,7 @@ with st.spinner('Wait a sec, loading the ArtNet model!'):
 # ===============
 # Header content
 # ===============
-st.title('What Neural Network Sees in Art')
+st.title('ArtNet - Painting Style Classification and Feature Visualization')
 st.write('Visualize what a neural network sees when looking and classifying a painting')
 button_state = np.load('cached/button_state.npy', allow_pickle = True)
 
