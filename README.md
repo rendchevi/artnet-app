@@ -31,7 +31,7 @@ streamlit run app.py
 
 ### Dataset Preparation, Preprocessing, and Augmentation
 **Dataset Preparation**  
-Dataset used in this project is from Painter by Numbers which available on Kaggle. The dataset is a huge collection of paintings (about 23k unique paintings) labelled by the painters name, style (movement), genre, and many more. I sorted and categorized the paintings by the style and aggregated it into 5 major modern movements or styles:
+Dataset used in this project is from [Painter by Numbers on Kaggle](https://www.kaggle.com/c/painter-by-numbers). The dataset is a huge collection of paintings (about 23k unique paintings) labelled by the painters name, style (movement), genre, and many more. I sorted and categorized the paintings by the style and aggregated it into 5 major modern movements or styles:
 ```
 # Painting Style Classes Aggregation
 Cubism        -> ['Cubism', 'Tubism', 'Cubo-Expressionism', 'Mechanistic Cubism', 'Analytical Cubism', 'Cubo-Futurism', 'Synthetic Cubism']
@@ -59,7 +59,7 @@ Global Average Pooling -> Dropout -> Batch Normalization -> Dense Layer
 ```
 Dropout rate is set to 0.5 and softmax function is used as the final layer's activation function.
 
-The network (DenseNet-121 plus the classifier) is trained via transfer learning approach. I used DenseNet-121 pre-trained with ImageNet dataset (from Tensorflow's implementation) as the starting network's weights and the classifier weights are initialized randomly.
+The network (DenseNet-121 plus the classifier) is trained via transfer learning approach. I used DenseNet-121 pre-trained with ImageNet dataset (from [Tensorflow's implementation](https://www.tensorflow.org/api_docs/python/tf/keras/applications/DenseNet121)) as the starting network's weights and the classifier weights are initialized randomly.
 
 When training, we freeze all the layers in the DenseNet-121 except some of the last convolutional layers to allow the network to learn some probable unique high-level features in paintings and the batch normalization layers.
 ```
