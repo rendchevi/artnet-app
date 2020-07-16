@@ -1,7 +1,7 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
 ## Project Description
-> **🖼️ ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**
+**🖼️ ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**  
 
 ![Preview](https://github.com/rendchevi/artnet-app/blob/master/assets/artnet-preview.gif)
 
