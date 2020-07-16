@@ -9,7 +9,7 @@ The neural network (currently) learns 5 major art movements: **Cubism, Impressio
   
 Unlike movements such as Dada and Surrealism, which distinction presents in the uncommon object and narration in the paintings. Thus, can make the network harder to learn and easier to misclassify with other styles (I've tried it and the results not really good, maybe on another project).  
 
-I also thought it would be interesting to **visualize what the network learned from classifying painting styles/movements**, although it hasn't been optimized very well, I added option in the app to visualize what the network sees at some layers of the network. **GradCAM** is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
+I also thought it would be interesting to **visualize what the network learned from classifying painting styles/movements**, although it hasn't been optimized very well, I added option in the app to visualize what the network sees at some layers of the network. [**GradCAM**](https://arxiv.org/abs/1610.02391) is used as the feature visualization method, you can examine the code inside ```utils.py``` in ```get_heatmap()``` function, feel free to tinker with it for better visualization output, I haven't pay much attention to it.  
 
 This repository is only containing the app to run the model on your own and the pre-trained model, I plan to upload the training and data preprocessing codes soon in different repository.
 
@@ -48,7 +48,7 @@ Abstract      -> ['Abstract Art', 'New Casualism', 'Post-Minimalism', 'Orphism',
 **Dataset Preprocessing and Augmentation**  
 After we have the selected paintings for the final dataset. We need to make the network learn two things from the dataset, how the whole image information represents certain style and how texture details such as brush stroke and color tone represents certain style. 
 
-To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[224x224x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This process will augment the dataset by 5 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
+To achieve the first one, we simply pad (we should maintain image's aspect ratio) and resize the the image into square with size ```[224x224x3]``` (the network input size). For the latter, we divide the image into 5 regions by cropping them without resize, to capture brush stroke texture and color in high-resolution. This augmentation method is adapted from this [paper](https://ieeexplore.ieee.org/document/8631731). This process will augment the dataset by 6 folds. The final images in the dataset is around 58k images and divided into training, validation, and testing data in 75:15:15 ratio.
 
 ![Patch Image](https://github.com/rendchevi/artnet-app/blob/master/assets/patch_sample.jpg)
 
