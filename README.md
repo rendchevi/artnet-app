@@ -1,7 +1,7 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
-### Description
-> **ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**
+### Project Description
+**ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**
 
 
 The neural network (currently) learns 5 major art movements: **Cubism, Impressionism, Expressionism, Realism, and Abstract**. I chose these movements because their disctinction mainly presents in visual appereances such as the brush strokes, painting techniques, textures, and color tones.  
