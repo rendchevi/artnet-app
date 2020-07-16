@@ -1,6 +1,6 @@
 # ArtNet - Painting Style Classification and Feature Visualization
 
-### Project Description
+## Project Description
 **ArtNet is a deep learning project with the goal to classify or identify modern painting styles and visualize what the network "sees" when making that decision.**
 
 
@@ -25,6 +25,8 @@ Download or clone this repo and execute the following command in your command pr
 ```
 streamlit run app.py
 ```
+
+## Project Details
 
 ### Dataset Preparation, Preprocessing, and Augmentation
 **Dataset Preparation**  
